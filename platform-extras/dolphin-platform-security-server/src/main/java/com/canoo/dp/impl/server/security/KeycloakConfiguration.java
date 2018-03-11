@@ -24,13 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.canoo.dp.impl.security.SecurityConfiguration.ALLOWED_APPLICATIONS_PROPERTY_NAME;
-import static com.canoo.dp.impl.security.SecurityConfiguration.ALLOWED_REALMS_PROPERTY_NAME;
-import static com.canoo.dp.impl.security.SecurityConfiguration.APPLICATION_PROPERTY_DEFAULT_VALUE;
-import static com.canoo.dp.impl.security.SecurityConfiguration.APPLICATION_PROPERTY_NAME;
-import static com.canoo.dp.impl.security.SecurityConfiguration.AUTH_ENDPOINT_PROPERTY_DEFAULT_VALUE;
-import static com.canoo.dp.impl.security.SecurityConfiguration.AUTH_ENDPOINT_PROPERTY_NAME;
-import static com.canoo.dp.impl.security.SecurityConfiguration.REALM_PROPERTY_NAME;
+import static com.canoo.dp.impl.security.SecurityConfiguration.*;
 import static org.apiguardian.api.API.Status.INTERNAL;
 
 @API(since = "0.19.0", status = INTERNAL)
@@ -77,7 +71,6 @@ public class KeycloakConfiguration implements Serializable {
 //        if(this.realmName != null && !this.realmName.isEmpty()){
 //            this.realmNames.add(this.realmName);
 //        }
-
         this.applicationName = platformConfiguration.getProperty(APPLICATION_PROPERTY_NAME, APPLICATION_PROPERTY_DEFAULT_VALUE) ;
         this.applicationNames = platformConfiguration.getListProperty(ALLOWED_APPLICATIONS_PROPERTY_NAME, Collections.emptyList());
 //        if(this.applicationName != null && !this.applicationName.isEmpty()){
